@@ -1,3 +1,4 @@
+# 조건에 부합하는 중고거래 댓글 조회하기
 select title, A.board_id, B.reply_id, B.writer_id, B.contents, date_format(b.created_date, '%Y-%m-%d') as created_date
 from used_goods_board as A
          join used_goods_reply as B
