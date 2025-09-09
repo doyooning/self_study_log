@@ -1,5 +1,13 @@
 # 조건에 맞는 개발자 찾기
-select distinct d.id, d.email, d.first_name, d.last_name
-from developers d, skillcodes s
-where (256 & d.skill_code) > 0 or (1024 & d.skill_code) > 0
-order by d.id asc;
+select id, email, first_name, last_name
+from developers
+where skill_code & (
+    select code
+    from skillcodes
+    where name = 'C#'
+) > 0 or skill_code & (
+    select code
+    from skillcodes
+    where name = 'Python'
+) > 0
+order by id asc;
