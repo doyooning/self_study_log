@@ -33,7 +33,7 @@ public class gsonEx {
         // JSON(String) -> Object(List)
         // List로 바꿀 때는 별도로 List 안에 들어갈 type의 정보를 알려주어야 함
         // Reflect -> TypeToken 사용
-        gson.fromJson(listjson, new TypeToken<List<bookdto>>() {}.getType());
+        gson.fromJson(listjson, new TypeToken<List<bookdto>>(){}.getType());
         for (bookdto vo : list) {
             System.out.println(vo.getBookName());
         }
