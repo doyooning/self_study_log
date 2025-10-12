@@ -29,6 +29,7 @@ public class melonTicket {
 
             for (int i = 0; i < list.length(); i++) {
                 JSONObject item = list.getJSONObject(i);
+                int id = item.getInt("prodId");
                 String title = item.optString("title", "제목 없음");
                 String place = item.optString("placeName", "장소 미정");
                 String period = item.optString("periodInfo", "기간 미정");
@@ -37,6 +38,7 @@ public class melonTicket {
                 System.out.println((i + 1) + ". " + title);
                 System.out.println("장소: " + place + ", " + region);
                 System.out.println("기간: " + period);
+                System.out.println("공연id: " + id);
                 System.out.println();
             }
 
