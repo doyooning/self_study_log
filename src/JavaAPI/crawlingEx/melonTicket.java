@@ -40,6 +40,12 @@ public class melonTicket {
                 JSONObject saleTypeCodeListJson = saleTypeCodeList.getJSONObject(0);
                 String reserveStartDt = saleTypeCodeListJson.optString("reserveStartDt", "-");
 
+                String year = reserveStartDt.substring(0, 4);
+                String month = reserveStartDt.substring(4, 6);
+                String day = reserveStartDt.substring(6, 8);
+                String hour = reserveStartDt.substring(8, 10);
+                String formattedDt = String.format("%s.%s.%s %s시", year, month, day, hour);
+
                 String title = item.optString("title", "제목 없음");
                 String place = item.optString("placeName", "장소 미정");
                 String period = item.optString("periodInfo", "기간 미정");
@@ -49,8 +55,9 @@ public class melonTicket {
                 System.out.println("장소: " + place + ", " + region);
                 System.out.println("기간: " + period);
                 System.out.println("공연id: " + id);
-                System.out.println("예매 오픈: " + reserveStartDt);
+                System.out.println("예매 오픈: " + formattedDt);
                 // reserveStartDt -> 20251010200000
+                System.out.println();
             }
 
         } catch (IOException | InterruptedException e) {
