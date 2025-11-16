@@ -10,8 +10,8 @@ public class no_1929 { // 소수 구하기
         int N = sc.nextInt();
         int[] A = new int[N+1]; // 배열은 인덱스, 0~N까지(=N+1개)
 
-        // 초기 배열 설정(1~N까지)
-        for (int i = 1; i <= N; i++) {
+        // 초기 배열 설정(2~N까지)
+        for (int i = 2; i <= N; i++) {
             A[i] = i;
         }
 
